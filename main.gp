@@ -74,7 +74,7 @@ c1=fromdigits(Vec(v1),128);    \\ c1 est donc le chiffré d'un message sans mot 
 
 \\ Le mot de pas est composé de 10 caractère, et donc, codé en base 128, le code est inférieur à 128^10 d'où le troisième paramètre de la fonction zncoppersmith
 \\ On cherche à résoudre (c1+128^(#v2)*x)^e-chiffre=0
-\\ Comme le mot de passe se trouve au milieu du texte, il est nécessaire de la multiplier par 128^(cardinal de la fin du texte) pour que celui-ci vienne se placer au bonne endroit dans le texte.
+\\ Comme le mot de passe se trouve au milieu du texte, il est nécessaire de la multiplier par 128^(cardinal de la fin du texte) pour que celui-ci vienne se placer au bon endroit dans le texte.
 
 codeMdp=zncoppersmith( ( 128^(#v2)*x + c1 )^e - chiffre , n , 128^10 );
 \\reconstitution du message complet
